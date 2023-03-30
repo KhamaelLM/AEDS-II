@@ -8,7 +8,7 @@ int main(){
     int valor, resposta = 0;
 
     while(1){
-        printf("\n------ ÁRVORE BST------\n1 - Inserir valor\n2 - Pesquisar valor\n3 - Imprimir árvore\n0 - Sair\n");
+        printf("\n------ ÁRVORE BST------\n1 - Inserir valor\n2 - Pesquisar valor\n3 - Imprimir árvore\n4 - Remover valor\n0 - Sair\n");
         scanf("%d", &resposta);
 
         if(resposta == 0)
@@ -23,7 +23,10 @@ int main(){
             pesquisa(&arvore, valor);
         }else if(resposta == 3){
             imprime(arvore);
-        }else
+        }else if(resposta == 4){
+            printf("\nEm breve!\n");
+        }
+        else
             printf("Opção inválida\n");
     }
 
