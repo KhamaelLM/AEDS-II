@@ -29,12 +29,32 @@ void insere (Apontador *no, int valor){
 }
 
 void imprime(Apontador no){
+    
+    
+}
+
+void preOrdem(Apontador no){
     if (no == NULL)
         return;
-    imprime(no->esquerda);
     printf("\n- %d",no->chave);
-    imprime(no->direita);
-    
+    preOrdem(no->esquerda);
+    preOrdem(no->direita);
+}
+
+void ordem(Apontador no){
+    if (no == NULL)
+        return;
+    ordem(no->esquerda);
+    printf("\n- %d",no->chave);
+    ordem(no->direita);
+}
+
+void posOrdem(Apontador no){
+    if (no == NULL)
+        return;
+    posOrdem(no->esquerda);
+    posOrdem(no->direita);
+    printf("\n- %d",no->chave);
 }
 
 void pesquisa(Apontador *no, int valor){
@@ -92,4 +112,17 @@ void retira(int valor, Apontador *no){
     aux = *no;
     *no = (*no)->direita;
     free(aux);
+}
+
+int altura(Apontador no){
+    if(no == NULL)
+        return -1;
+    else{
+        int alturaEsq = altura(no->esquerda);
+        int alturaDir = altura(no->direita);
+        if(alturaEsq < alturaDir)
+            return alturaDir + 1;
+        else 
+            return alturaEsq + 1;
+    }
 }
