@@ -28,11 +28,6 @@ void insere (Apontador *no, int valor){
         printf("\nESSE VALOR JÁ ESTÁ NA ÁRVORE\n");
 }
 
-void imprime(Apontador no){
-    
-    
-}
-
 void preOrdem(Apontador no){
     if (no == NULL)
         return;
