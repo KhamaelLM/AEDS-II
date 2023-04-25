@@ -24,7 +24,10 @@ int main(){
         }else if(resposta == 3){
             imprime(arvore);
         }else if(resposta == 4){
-            printf("\nEm breve!\n");
+            printf("\nDigite o valor para ser removido:\n");
+            scanf("%d", &valor);
+            retira(valor, &arvore);
+            printf("\n");
         }
         else
             printf("Opção inválida\n");

@@ -16,4 +16,10 @@ void imprime(Apontador no);
 
 void pesquisa(Apontador *no, int valor);
 
+void antecessor(Apontador valor, Apontador *no);
+
+void retira(int valor, Apontador *no);
+
+
+
 #endif

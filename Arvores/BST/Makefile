@@ -1,3 +1,3 @@
 make all:
-		gcc main.c -o saida
-		./saida
+		gcc main.c -o bst
+		./bst
