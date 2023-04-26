@@ -35,6 +35,7 @@ int alturaH(Apontador no);
 // Altura Vertical H que considera os apontadores Verticais
 int alturaV(Apontador no);
 
+// Percurso em ordem
 void imprime(Apontador no);
 
 #endif

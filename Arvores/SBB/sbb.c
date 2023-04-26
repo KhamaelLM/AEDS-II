@@ -118,12 +118,19 @@ void DE(Apontador *Ap){
     *Ap = Ap2;
 }
 
-void imprime(Apontador no){
-    if(no == NULL)
-      return;
-    imprime(no->esquerda);
-    printf("\n- %d",no->chave);
-    imprime(no->direita);
+void pesquisa(int valor, Apontador *no){
+    if ((*no)==NULL){
+        printf("\nErro: Esse valor não está na árvore\n");
+        return;
+    }
+    if(valor < (*no)->chave){
+        pesquisa(valor, &(*no)->esquerda);
+        return;
+    }
+    if(valor > (*no)->chave)
+        pesquisa(valor, &(*no)->direita);
+    else
+        printf("\nValor encontrado!\n");
 }
 
 int alturaH(Apontador no){
@@ -139,7 +146,6 @@ int alturaH(Apontador no){
     }
 }
 
-
 int alturaV(Apontador no){
     if(no == NULL)
         return -1;
@@ -153,4 +159,12 @@ int alturaV(Apontador no){
         if (alturaDir == alturaEsq)
             return alturaDir;
     }
+}
+
+void imprime(Apontador no){
+    if(no == NULL)
+      return;
+    imprime(no->esquerda);
+    printf("\n- %d",no->chave);
+    imprime(no->direita);
 }
