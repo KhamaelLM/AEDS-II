@@ -29,7 +29,10 @@ void DE(Apontador *Ap);
 
 void pesquisa(int valor, Apontador *no);
 
-int altura(Apontador no);
+//Altura horizontal K, semelhante a BST
+int alturaH(Apontador no);
+
+int alturaV(Apontador no);
 
 void imprime(Apontador no);
 

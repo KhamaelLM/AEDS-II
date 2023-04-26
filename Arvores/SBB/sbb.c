@@ -126,15 +126,31 @@ void imprime(Apontador no){
     imprime(no->direita);
 }
 
-int altura(Apontador no){
+int alturaH(Apontador no){
     if(no == NULL)
         return -1;
     else{
-        int alturaEsq = altura(no->esquerda);
-        int alturaDir = altura(no->direita);
+        int alturaEsq = alturaH(no->esquerda);
+        int alturaDir = alturaH(no->direita);
         if(alturaEsq < alturaDir)
             return alturaDir + 1;
         else 
             return alturaEsq + 1;
+    }
+}
+
+
+int alturaV(Apontador no){
+    if(no == NULL)
+        return -1;
+    else{
+        int alturaEsq = alturaV(no->esquerda);
+        int alturaDir = alturaV(no->direita);
+        if(no->BitDir == Vertical)
+            return alturaDir + 1;
+        if(no->BitEsq == Vertical)
+            return alturaEsq + 1;
+        if (alturaDir == alturaEsq)
+            return alturaDir;
     }
 }
